@@ -1,52 +1,50 @@
 
-const { expect } = require('chai')
-const {userCreateQ} = require('./queries')
-const{user} = require('./data')
-const gqRequest = require('../gqRequest')
-
-
+const { expect } = require('chai');
+const { userCreateQ } = require('./user/queries');
+const { user } = require('./user/data');
+const gqlRequest = require('./user/gqlRequest');
 
 let respData = null
 let postData = null
 
 describe('USER CREATE', () => {
     describe('USER CREATE - POSITIVE TEST', () => {
-        it('user create all fields', () => {
+        it('user create all fields', (done) => {
             postData ={
                 query: userCreateQ,
                 variables: user
             }
-            gqRequest(postData)
+            gqlRequest(postData)
                 .expect(200)
                 .end((err, res) => {
                     if (err) return done(err)
-                    respData = res.body.data
-                   // expect(respData).eq()
+                    respData = res.body
+                    // expect(respData).eq()
                     console.log(respData)
                     done()
 
                 })
 
         })
-        it('user create all fields', () => {
-    })
-    })
 
-    describe('USER CREATE - NEGATIVE TEST', () => {
-        it('user create all fields', () => {
+    })
+})
 
-        })
-        it('user create all fields', () => {
+    // describe('USER CREATE - NEGATIVE TEST', () => {
+    //     it('user create all fields', () => {
+
+    //     })
+    //     it('user create all fields', () => {
         
         
-        })
-        it('user create all fields', () => {
+    //     })
+    //     it('user create all fields', () => {
 
-        })
-        it('user create all fields', () => {
+    //     })
+    //     it('user create all fields', () => {
 
 
             
-        })
-    })
-})
+    //     })
+    // })
+

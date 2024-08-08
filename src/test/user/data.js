@@ -1,8 +1,8 @@
 const user = {
-    "userInput": {
-      "firstName": 'testFirstName',
-      "lastName": 'testFirstLastName',
+    userInput: {
+        firstName: 'testFirstName',
+        lastName: 'testLastName'
 
-  }
+    }
 }
-module.exports = { user}
+module.exports = { user }
