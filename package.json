@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha ./src/test/user/userGetById1.spec.js",
+    "testGetId": "mocha ./src/test/user/userGetById1.spec.js",
+    "testCreate": "mocha ./src/test/user/userCreate.spec.js",
     "start": "nodemon src/index.js"
   },
   "keywords": [],

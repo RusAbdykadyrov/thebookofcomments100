@@ -23,9 +23,9 @@ describe('USER GET BY ID', () => {
                     console.log(respData);
 
                     expect(respData._id).eq('66bba18c17cfd8676255104a')
-                    expect(respData.firstName).eq('testFirstName');
+                    expect(respData.firstName).eq(user. userInput.firstName);
                     expect(respData.lastName).eq('testLastName');
-                    //expect(respData.lastName).eq('lastName')
+                   
                     done()
                 })
         })
