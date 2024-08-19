@@ -3,12 +3,23 @@ const { expect } = require('chai');
 const { userCreateQ } = require('./queries');
 const { user } = require('./data');
 const gqlRequest = require('../gqlRequest');
+const mongoose = require('mongoose');
+const User = require('../../models/User');
+
 
 let respData = null
 let postData = null
 
+before('deletAllUsers', () => {
+  
+  return User.deleteMany({})
+
+})
 describe('USER CREATE', () => {
+
     describe('USER CREATE - POSITIVE TEST', () => {
+
+        }),
         it('user create all fields', (done) => {
             postData ={
                 query: userCreateQ,
@@ -28,10 +39,25 @@ describe('USER CREATE', () => {
                 })
 
         })
+        it('user create all fields', (done) => {
+            postData ={
+                query: userCreateQ,
+                variables: user
+            }
+            gqlRequest(postData)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) return done(err)
+                    respData = res.body.data.userCreate
+                    console.log(respData); 
+                    
+                    // expect(respData.firstName).eq(user.userInput.firstName)
+                    // expect(respData.lastName).eq(user.userInput.lastName)
+                    done()
 
+                })
+        })
     })
-})
-
     // describe('USER CREATE - NEGATIVE TEST', () => {
     //     it('user create all fields', () => {
 
@@ -49,4 +75,3 @@ describe('USER CREATE', () => {
             
     //     })
     // })
-
