@@ -29,10 +29,10 @@ describe('USER UPDATE BY ID', () => {
                     postData = {
                         query: userUpdateByIdQ,
                         variables: {
-                            _id: userId,  // Используем ID пользователя, который был создан ранее
+                            _id: userId,  
                             firstName: "UpdatedFirstName",
-                            lastName: "UpdatedLastName",
-                            email: user.userInput.email // Оставляем тот же email
+                            lastName: "UpdatedLastName"
+                
                         }
                     };
         

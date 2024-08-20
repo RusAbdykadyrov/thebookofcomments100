@@ -1,8 +1,8 @@
 const user = {
     userInput: {
-             _id: "userId",
+            
             firstName: "UpdatedFirstName",
-            lastName: "UpdatedLastName",
+            lastName: "UpdatedLastName"
 
     }
 }

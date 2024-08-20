@@ -12,18 +12,20 @@ describe('USER GET BY ID', () => {
         before('user create', (done) => {
             postData = {
                 query: userCreateQ,
-                variables: user
+                variables: {
+                    userId: process.env.USER_ID
+                }
 }
             gqlRequest(postData)
                 .expect(200)
                 .end((err, res) => {
                     if (err) return done(err)
-                    userId= res.body.data.userCreate._id
+                    userId= res.body.data.userCreateId
                     console.log('userId=', userId)
 
-                    // expect(respData._id).eq('66bba18c17cfd8676255104a')
+                    expect(respData.firstName).eq(user.userInput.firstName)
                     // expect(respData.firstName).eq(user. userInput.firstName);
-                    // expect(respData.lastName).eq('testLastName');
+                    expect(respData.lastName).eq(user.userInput.lastName);
                    
                     done()
                 })
