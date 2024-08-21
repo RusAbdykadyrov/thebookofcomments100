@@ -21,5 +21,12 @@ const userUpdateByIdQ = `mutation UserUpdateById($userInput: UserFields) {
   }
 }`
 
+const userGetAllQ = `query UsersGetAll($amount: Int) {
+  usersGetAll(amount: $amount) {
+    lastName
+    firstName
+    _id
+  }
+}`
 
-  module.exports = { userCreateQ, userGetByIdQ, userUpdateByIdQ};
+  module.exports = { userCreateQ, userGetByIdQ, userUpdateByIdQ, userGetAllQ};

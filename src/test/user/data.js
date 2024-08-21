@@ -1,9 +1,19 @@
 const user = {
     userInput: {
-            
-            firstName: "UpdatedFirstName",
-            lastName: "UpdatedLastName"
+  
+            firstName: "firstName",
+            lastName: "lastName"
 
     }
 }
-module.exports = { user }
+const userUpdated = {
+    
+        userInput: {
+          firstName: "firstnameUpdated",
+          lastName: "lastNameUpdated",
+          userId: process.env.USER_ID
+        
+      }
+    }
+
+module.exports = { user, userUpdated}

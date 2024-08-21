@@ -10,9 +10,8 @@ let postData = null
 
 process.env.USER_ID = null
 
-before('deletAllUsers', () => {
-  
-  return User.deleteMany({})
+before('delet All Users', () => {
+ User.deleteMany({})
 
 })
 describe('USER CREATE', () => {

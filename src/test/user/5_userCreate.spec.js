@@ -12,7 +12,7 @@ let postData = null
 
 before('deletAllUsers', () => {
   
-  return User.deleteMany({})
+User.deleteMany({})
 
 })
 describe('USER CREATE', () => {
