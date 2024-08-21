@@ -9,11 +9,11 @@ const user = {
 const userUpdated = {
     
         userInput: {
-          firstName: "firstnameUpdated",
-          lastName: "lastNameUpdated",
+          firstName: 'firstnameUpdated',
+          lastName: 'lastNameUpdated',
           userId: process.env.USER_ID
         
       }
     }
 
-module.exports = { user, userUpdated}
+module.exports = { user,userUpdated }

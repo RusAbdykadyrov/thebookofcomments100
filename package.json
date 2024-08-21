@@ -6,9 +6,10 @@
   "scripts": {
     "testGetId": "mocha ./src/test/user/1_userGetById1.spec.js",
     "testCreate": "mocha ./src/test/user/5_userCreate.spec.js",
-   "testUpdate": "mocha ./src/test/user/2_userUpdateById.spec.js",
+   "testUserUp": "mocha mocha src/test/user/helper.js ./src/test/user/2_userUpdateById.spec.js",
     "testHelper": "mocha src/test/user/helper.js ./src/test/user/**.spec.js",
     "testAll":"mocha src/test/user/helper.js ./src/test/user/3_userGetAll.spec.js",
+    "testDellUser":"mocha src/test/user/helper.js ./src/test/user/4_userDeleteById.spec.js",
     "start": "nodemon src/index.js"
   },
   "keywords": [],

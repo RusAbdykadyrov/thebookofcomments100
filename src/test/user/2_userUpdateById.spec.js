@@ -6,6 +6,7 @@ const gqlRequest = require('../gqlRequest');
 
 let respData = null;
 let postData = null;
+let userId = null
 
 describe('USER UPDATE BY ID', () => {
     describe('User Update BY ID - Positive test', () => {
@@ -15,9 +16,9 @@ describe('USER UPDATE BY ID', () => {
                 query: userUpdateByIdQ,
                 variables: {
                     userInput: {
-                        userId: userUpdated, 
-                        firstName: "firstnameUpdated",
-                        lastName: "lastNameUpdated"
+                        userId: process.env.USER_ID, 
+                        firstName: 'firstnameUpdated',
+                        lastName: 'lastNameUpdated'
                     }
                 }
             };
@@ -27,8 +28,8 @@ describe('USER UPDATE BY ID', () => {
                     if (err) return done(err);
                     respData = res.body.data.userUpdateById; 
                     console.log(respData);
-                    expect(respData.firstName).to.equal("firstnameUpdated");
-                    expect(respData.lastName).to.equal("lastNameUpdated");
+                    expect(respData.firstName).equal('firstnameUpdated');
+                    expect(respData.lastName).equal('lastNameUpdated');
                     done();
                 });
         });
