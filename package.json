@@ -4,11 +4,11 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "testGetId": "mocha ./src/test/user/1_userGetById1.spec.js",
+    "testGetId": "mocha mocha mocha src/test/user/helper.js ./src/test/user/1_userGetById.spec.js",
     "testCreate": "mocha ./src/test/user/5_userCreate.spec.js",
    "testUserUp": "mocha mocha src/test/user/helper.js ./src/test/user/2_userUpdateById.spec.js",
     "testHelper": "mocha src/test/user/helper.js ./src/test/user/**.spec.js",
-    "testAll":"mocha src/test/user/helper.js ./src/test/user/3_userGetAll.spec.js",
+    "testAll":"mocha src/test/user/helper.js ./src/test/user/**.spec.js --timeoout 10000 -- exit",
     "testDellUser":"mocha src/test/user/helper.js ./src/test/user/4_userDeleteById.spec.js",
     "start": "nodemon src/index.js"
   },

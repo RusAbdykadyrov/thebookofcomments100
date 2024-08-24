@@ -21,7 +21,7 @@ gqlRequest(postData)
 .expect(200)
 .end((err, res) => {
 if(err) return done(res)
-respData = res.body.data.userDelById
+respData = res.body.data.usersDelById
 console.log(respData)
 
 

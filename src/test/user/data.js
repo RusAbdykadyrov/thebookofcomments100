@@ -15,5 +15,15 @@ const userUpdated = {
         
       }
     }
+const userGetAll = {
+  userInput: {
+    amount: null
+  }
+}
+const userGetById = {
+  userInput: {
+    userId : process.env.USER_ID
+  }
+  }
 
-module.exports = { user,userUpdated }
+module.exports = { user,userUpdated, userGetAll,userGetById}

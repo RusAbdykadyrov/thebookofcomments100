@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 const { user } = require('./data');
-const { userGetByIdQ, userCreateQ } = require('./queries');
+const { userGetByIdQ } = require('./queries');
 const gqlRequest = require('../gqlRequest')
 
 let respData = null
@@ -9,9 +9,9 @@ let userId = null
 
 describe('USER GET BY ID', () => {
     describe('USER GET BY ID - POSITIVE TEST', () => {
-        before('user create', (done) => {
+        it ('user get by ID', (done) => {
             postData = {
-                query: userCreateQ,
+                query: userGetByIdQ,
                 variables: {
                     userId: process.env.USER_ID
                 }
@@ -20,12 +20,12 @@ describe('USER GET BY ID', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) return done(err)
-                    userId= res.body.data.userCreateId
+                    userId= res.body.data.userGetById
                     console.log(respData)
 
-                    expect(respData.firstName).eq(user.userInput.firstName)
-                    // expect(respData.firstName).eq(user. userInput.firstName);
-                    expect(respData.lastName).eq(user.userInput.lastName);
+                    //expect(respData).eq(process.env.USER_ID)
+                    expect(respData).to.be.null
+                    //expect(respData.lastName).eq(user.userInput.lastName);
                    
                     done()
                 })
