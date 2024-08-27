@@ -5,7 +5,7 @@ const gqlRequest = require('../gqlRequest')
 
 let respData = null
 let postData = null
-let userId = null
+
 
 describe('USER GET BY ID', () => {
     describe('USER GET BY ID - POSITIVE TEST', () => {
