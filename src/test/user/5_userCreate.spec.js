@@ -51,7 +51,7 @@ describe('USER CREATE', () => {
                     respData = res.body.data.userCreate
                     console.log(respData); 
                     
-                    // expect(respData.firstName).eq(user.userInput.firstName)
+                    expect(respData.firstName).eq(user.userInput.firstName)
                     // expect(respData.lastName).eq(user.userInput.lastName)
                     done()
 
